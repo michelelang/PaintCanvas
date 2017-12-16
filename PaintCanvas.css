@@ -1,0 +1,93 @@
+
+body {
+	margin: 0;
+}
+
+#div_menu {
+	width: 250px;
+	height: 100%;
+
+}
+
+button {
+	width: 200px;
+	height: 40px;
+}
+
+#titlePic {
+	font-family: 'Sofia'; font-size: 20px;
+	margin: 20px;
+}
+
+#new_canvas, #save_canvas, #load_canvas  {
+	display: block;
+	margin-left: 8%;
+	font-family: 'Sofia'; font-size: 17px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: dimgray ;
+	background: lightgrey;
+}
+
+#title_colors {
+	margin-left: 3.5%;
+	font-family: 'Sofia'; font-size: 25px;
+	margin-top: 50px;
+	margin-bottom: 10px;
+	color: black;
+}
+
+#div_colorMenu {
+	margin-left: 1.5%;
+}
+
+#salmonButton {
+	display: block;
+	background: salmon;
+}
+
+#greenButton {
+	display: block;
+	background: green;
+}
+
+#purpleButton {
+	display: block;
+	background: purple;
+}
+
+#blackButton {
+	display: block;
+	background: black;
+}
+
+#blueButton {
+	display: block;
+	background: blue;
+}
+
+/*#canvasDiv {
+	height: 500px;
+	width: 500px;
+	border: 1px solid black;
+	display: inline-block;
+	margin-left: 17.5%;
+	margin-top: -40.14%;
+}*/
+
+#tableChange {
+	width: 500px;
+	height: 500px;
+	border-spacing: 0;
+	margin-left: 17.5%;
+	margin-top: -33.7%;
+	visibility: hidden;
+}
+
+#tableData {
+	border-spacing: 0;
+}
+
+#tdFunctions{
+	border-spacing: 0;
+}
