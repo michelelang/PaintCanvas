@@ -2,8 +2,6 @@ var Canvas = {};
 
 var button_load;
 
-Canvas.selectedColor = " ";
-
 var pictureTitle = document.createElement('div');
 pictureTitle.setAttribute('id', 'titlePic');
 document.body.appendChild(pictureTitle);
@@ -62,42 +60,56 @@ document.body.appendChild(para);
 var colorTitle = document.createTextNode("Color Options");
 para.appendChild(colorTitle);
 
-Canvas.colors = ["salmon", "green", "purple", "black", "blue"];
 
 var colorButton_div = document.createElement('div');
 colorButton_div.setAttribute('id', 'div_colorMenu');
 document.body.appendChild(colorButton_div);
 
-// Canvas.bindColorActions = function (){
+Canvas.colors = ["salmon", "green", "purple", "black", "blue", "white"];
+var colorsHolder;
+	
 
-var button_salmon = document.createElement("BUTTON");
-button_salmon.setAttribute('id', 'salmonButton');
-colorButton_div.appendChild(button_salmon);
+for (var i=0; i<Canvas.colors.length ;i++){
+	var button = document.createElement("BUTTON");
+	button.setAttribute('id', Canvas.colors[i]);
+	colorButton_div.appendChild(button);
+	button.addEventListener("click", selectColor);
+}
 
-var button_green = document.createElement("BUTTON");
-button_green.setAttribute('id', 'greenButton');
-colorButton_div.appendChild(button_green);
+function selectColor (event) {
+	var clickedColor = event.srcElement.id;
+	colorsHolder = clickedColor;
+}
 
-var button_purple = document.createElement("BUTTON");
-button_purple.setAttribute('id', 'purpleButton');
-colorButton_div.appendChild(button_purple);
-
-var button_black = document.createElement("BUTTON");
-button_black.setAttribute('id', 'blackButton');
-colorButton_div.appendChild(button_black);
-
-var button_blue = document.createElement("BUTTON");
-button_blue.setAttribute('id', 'blueButton');
-colorButton_div.appendChild(button_blue);
+function coloredDiv (event) {
+	var clickedDiv = event.srcElement;
+	clickedDiv.style.backgroundColor = colorsHolder;
+}
 
 
+
+
+
+// var button_eraser = document.createElement("BUTTON");
+// button_eraser.setAttribute('id', 'eraserButton');
+// button_eraser.innerHTML = "Eraser";
+// document.body.appendChild(button_eraser);
+// button_eraser.addEventListener("click", deletedColor);
+// var eraserHolder = document.createElement('ul');
+
+// var deletecolor = ["white"];
+
+//  function deletedColor (event) {
+// 	var clickedDelete = event.srcElement.id;
+// 	eraserHolder = clickedDelete;
 // }
 
-// don't know if need DIV
+// function deleteDiv (event) {
+// 	var clickedDelete = event.srcElement;
+// 	clickedDelete.style.backgroundColor = "white";
+// }
 
-// var canvas_div = document.createElement('div');
-// canvas_div.setAttribute('id', 'canvasDiv');
-// document.body.appendChild(canvas_div);
+
 
 var table = document.createElement("TABLE");
 table.setAttribute('id', 'tableChange');
@@ -107,6 +119,9 @@ var tblBody = document.createElement('tbody');
 tblBody.setAttribute('id', 'tableFunctions');
 table.appendChild(tblBody);
 
+
+tableChange.addEventListener("mousemove", coloredDiv);
+// tableChange.addEventListener("onclick", deleteDiv);
 
 for(var i=0; i<50; i++){
 	var tr = document.createElement('TR');
@@ -121,14 +136,6 @@ for(var i=0; i<50; i++){
 		}
 	}
 
-	// Canvas.generateDynamicColors = function(){
-// //need to create element to append too
-// var colorsHolder = 
-// for (var i = 0; i < Canvas.colors.length; i++) {
-// var buttonItem = document.createElement("li");
-// 	var 
-// 	}
-// }
 
 
 
