@@ -21,32 +21,38 @@ Canvas.bindMenuActions = function (){
 	button_new.innerHTML = 'New Canvas';
 	button_new.addEventListener('click', Canvas.new);
 
-	var button_save = document.createElement("BUTTON");
-	button_save.setAttribute('id', 'save_canvas');
-	button_div.appendChild(button_save);
-	button_save.innerHTML = 'Save Canvas';
-	button_save.addEventListener('click', Canvas.save);
+	var button_size = document.createElement("BUTTON");
+	button_size.setAttribute('id', 'size_canvas');
+	button_div.appendChild(button_size);
+	button_size.innerHTML = 'Solid Color';
+	button_size.addEventListener('click', Canvas.size);
 
-	button_load = document.createElement("BUTTON");
-	button_load.setAttribute('id', 'load_canvas');
-	button_div.appendChild(button_load);
-	button_load.innerHTML = 'Load Canvas';
-	button_load.addEventListener('click', Canvas.load);
-	 }
+	// button_load = document.createElement("BUTTON");
+	// button_load.setAttribute('id', 'load_canvas');
+	// button_div.appendChild(button_load);
+	// button_load.innerHTML = 'Load Canvas';
+	// button_load.addEventListener('click', Canvas.load);
+	}
+
+	Canvas.size = function() {
+
+		tableChange.innerHTML = "";
+	}
+
 
 Canvas.new = function() {
 	var pictureName = prompt("What is the name of your new painting?");
 	pictureTitle.innerHTML = pictureName;
+	tableChange.setAttribute("style", "backgroundColor: initial;");
 	Canvas.show();
+	Canvas.table();
 }
+
 
 Canvas.show = function() {
 	tableChange.style.visibility = "visible";
 }
 
-Canvas.save = function() {
-	alert("save");
-}
 
 Canvas.load = function() {
 	alert("load");
@@ -86,30 +92,7 @@ function coloredDiv (event) {
 	clickedDiv.style.backgroundColor = colorsHolder;
 }
 
-
-
-
-
-// var button_eraser = document.createElement("BUTTON");
-// button_eraser.setAttribute('id', 'eraserButton');
-// button_eraser.innerHTML = "Eraser";
-// document.body.appendChild(button_eraser);
-// button_eraser.addEventListener("click", deletedColor);
-// var eraserHolder = document.createElement('ul');
-
-// var deletecolor = ["white"];
-
-//  function deletedColor (event) {
-// 	var clickedDelete = event.srcElement.id;
-// 	eraserHolder = clickedDelete;
-// }
-
-// function deleteDiv (event) {
-// 	var clickedDelete = event.srcElement;
-// 	clickedDelete.style.backgroundColor = "white";
-// }
-
-
+ white.innerHTML = "Eraser";
 
 var table = document.createElement("TABLE");
 table.setAttribute('id', 'tableChange');
@@ -119,9 +102,10 @@ var tblBody = document.createElement('tbody');
 tblBody.setAttribute('id', 'tableFunctions');
 table.appendChild(tblBody);
 
+tableChange.addEventListener("mouseover", coloredDiv);
 
-tableChange.addEventListener("mousemove", coloredDiv);
-// tableChange.addEventListener("onclick", deleteDiv);
+
+Canvas.table = function() {
 
 for(var i=0; i<50; i++){
 	var tr = document.createElement('TR');
@@ -135,6 +119,11 @@ for(var i=0; i<50; i++){
 			tr.appendChild(td);
 		}
 	}
+}
+
+
+
+
 
 
 

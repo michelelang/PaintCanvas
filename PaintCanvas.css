@@ -19,7 +19,7 @@ button {
 	margin: 20px;
 }
 
-#new_canvas, #save_canvas, #load_canvas  {
+#new_canvas, #size_canvas  {
 	display: block;
 	margin-left: 8%;
 	font-family: 'Sofia'; font-size: 17px;
@@ -28,6 +28,7 @@ button {
 	color: dimgray ;
 	background: lightgrey;
 }
+
 
 #title_colors {
 	margin-left: 3.5%;
@@ -41,48 +42,50 @@ button {
 	margin-left: 1.5%;
 }
 
-#salmonButton {
+#salmon {
 	display: block;
 	background: salmon;
 }
 
-#greenButton {
+#green {
 	display: block;
 	background: green;
 }
 
-#purpleButton {
+#purple {
 	display: block;
 	background: purple;
 }
 
-#blackButton {
+#black {
 	display: block;
 	background: black;
 }
 
-#blueButton {
+#blue {
 	display: block;
 	background: blue;
 }
 
-/*#canvasDiv {
-	height: 500px;
-	width: 500px;
+
+#white {
+	background: white;
 	border: 1px solid black;
-	display: inline-block;
-	margin-left: 17.5%;
-	margin-top: -40.14%;
-}*/
+	font-family: 'Sofia'; font-size: 17px;
+	color: dimgray;
+	display: block;
+
+}
 
 #tableChange {
 	width: 500px;
 	height: 500px;
 	border-spacing: 0;
 	margin-left: 17.5%;
-	margin-top: -33.7%;
+	margin-top: -30%;
 	visibility: hidden;
 }
+
 
 #tableData {
 	border-spacing: 0;
@@ -90,4 +93,6 @@ button {
 
 #tdFunctions{
 	border-spacing: 0;
+	border: none;
 }
+
